@@ -1,4 +1,5 @@
 //Comando simples em que exibe na tela a frase "Hello world"
+//Hieraquia de documento java:  projeto > pacote > classe > metodos > variaveis.
 
 package com.mycompany.teste;
 
