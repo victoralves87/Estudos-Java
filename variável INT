@@ -1,0 +1,13 @@
+// Utilizando a variável INT
+
+package com.mycompany.ola_mundo;
+
+public class var_Int {
+    
+   public static void main(String[] args){
+       int x=150;
+       
+       System.out.println("voce tem " + x + " anos");
+       
+   }
+}
