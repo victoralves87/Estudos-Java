@@ -1,0 +1,19 @@
+/* uma operação entre duas variáveis de mesmo tipo o resultado também será do
+mesmo tipo da variável
+ex: uma operação entre duas variáveis inteiras o resultado tabém sairá um numero
+inteiro
+*/
+package com.mycompany.ola_mundo;
+
+public class var_float {
+    
+    public static void main(String[] args){
+        int x=100;
+        double y=15.5;
+        
+        double resultado = x / y;
+        
+        System.out.println(resultado);
+    }
+    
+}
