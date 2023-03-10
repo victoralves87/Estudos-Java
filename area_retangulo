@@ -1,0 +1,18 @@
+//área do retangulo 
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    double base, altura, area;
+	    
+	    base =10.5;
+	    altura=20.5;
+	    area= base * altura;
+	    
+	System.out.println("a area do retangulo cuja base e:" + base);
+	System.out.println("e altura:" + altura);
+	System.out.println(area);
+		
+	}
+}
