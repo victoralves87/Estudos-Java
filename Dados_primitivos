@@ -1,0 +1,25 @@
+//TIPOS DE DADOS PRIMITIVOS 
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    //ARMAZENA NUMEROS INTEIROS!
+	    /*
+	    byte a; pequeno
+	    short b;pequeno
+	    int c; Medio
+	    long d; Grande
+	    
+	    //NUMEROS DECIMAIS!
+	    float e; menos
+	    double f; mais
+	    
+	    //OUTROS
+	    boolean g; 'false' or 'true'
+	    char h; string ou caractere
+	    */
+	   
+		
+	}
+}
