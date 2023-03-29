@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class scanner {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("insira o valor em gramas:");
+        int gramas=input.nextInt();
+        int kilo = gramas/1000;
+        gramas= gramas%1000;
+        System.out.println("o total de kilos é="+kilo);
+        System.out.println("o total em gramas é="+gramas);
+    }
+}
