@@ -1,0 +1,25 @@
+/*CASTING
+força uma variavel a ser de outro tipo.
+usado muito em poo.
+duas variaevis de mesmo tipo vao resultar em outra do mesmo
+tipo.
+*/
+public class Main
+{
+	public static void main(String[] args) {
+	    int x=10, y=5, z=3;
+	    double a=3, b=1;
+	  //  double c=(double)x/z;
+	    
+	    System.out.println("x="+x);
+	    System.out.println("y="+y);
+	    System.out.println("z="+z);
+	    System.out.println("x="+x);
+	    
+	    System.out.println("a="+a);
+	    System.out.println("b="+b);
+	    System.out.println("c="+c);
+	    
+	    
+	}
+}
