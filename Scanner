@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class scanner {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double base, altura, area;
+        System.out.println("digite o valor da base:");
+        base = input.nextDouble();
+        System.out.println("digite o valor da altura:");
+        altura = input.nextDouble();
+        area= base * altura;
+
+        System.out.println("a area de um retangulo de base="+base);
+        System.out.println("e altura="+altura);
+        System.out.println("é="+area);
+    }
+}
