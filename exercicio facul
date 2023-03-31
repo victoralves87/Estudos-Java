@@ -1,0 +1,45 @@
+
+
+class Petshop{
+    private String nome;
+    private String localizacao;
+    private String servicos;
+    
+    public String getNome(){
+        return this.nome;
+    }
+    public void setNome(String nome){
+        this.nome= nome;
+    }
+    
+    
+    public String getLocalizacao(){
+        return this.localizacao;
+    }
+    public void setLocalizacao(String localizacao){
+        this.localizacao = localizacao;
+        
+    }
+    
+    
+    public String getServicos(){
+        return this.servicos;
+    }
+ public void setServicos(String servicos){
+        this.servicos = servicos;
+        
+    }
+}
+
+class HelloWorld {
+    public static void main(String[] args) {
+        Petshop p= new Petshop();
+        p.setNome("PetVictor"+ "\n");
+        System.out.println("O nome e:"+ p.getNome()+ "\n");
+        p.setLocalizacao("rua afonso arinos");
+        System.out.println("a localizacao e:"+ p.getLocalizacao()+"\n");
+        p.setServicos("baho e tosa");
+        System.out.println("servico oferecido  e:"+ p.getServicos()+ "\n");
+        System.out.println("FIM");
+    }
+}
