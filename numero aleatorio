@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class random {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        Random random = new Random();
+
+        boolean acertou = false;
+        int tentativas = 10;
+        int secreto = random.nextInt();
+        int chute = 0;
+
+        System.out.println(secreto);
+        while (tentativas > 0 && acertou==false){
+            System.out.println("tente acertar um número:");
+            chute = scan.nextInt();
+
+            if (secreto == chute){
+                System.out.println("parabéns você acertou o numero");
+                acertou = true;
+            } else {
+                --tentativas;
+                System.out.println("você errou! você possui"+" "+ tentativas+" "+ "tentativas ainda");
+
+
+            }
+        }
+    }
+}
