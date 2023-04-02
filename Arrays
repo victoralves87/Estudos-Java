@@ -1,0 +1,19 @@
+
+public class arrays {
+    public static void main(String[] args) {
+        int aluno = 6;
+        double[] nota = new double[aluno];
+        nota[0]= 7.85;
+        nota[1]= 1.56;
+        nota[2]= 8.56;
+        nota[3]=5.8;
+        nota[4]=6.9;
+        nota[5]= 10.0;
+
+        for (double n: nota){
+            System.out.println(n);
+        }
+
+
+    }
+}
