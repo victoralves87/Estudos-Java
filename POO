@@ -1,0 +1,65 @@
+package POO;
+
+public class main {
+    public static void main(String[] args) {
+        TV televisao1 = new TV();
+
+        System.out.println("sua televisão é da marca: "+ televisao1.fabricante + " a televisao está "+
+                (televisao1.ligado== true ? "ligada" : "desligada")+ "o volume é: "+televisao1.volume);
+
+        televisao1.ligar();
+        televisao1.aumentarVolume();
+        televisao1.aumentarVolume();
+
+        System.out.println("sua televisão é da marca: "+ televisao1.fabricante + " a televisao está "+
+                (televisao1.ligado== true ? "ligada" : "desligada")+ "o volume é: "+televisao1.volume);
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+package POO;
+//CRIANDO A CLASSE TV E SEUS METODOS
+public class TV {
+    String fabricante = "sony";
+    int volume = 0;
+    boolean ligado = false;
+
+    public void aumentarVolume() {
+        if (volume >= 10) {
+            return;
+        } else {
+            volume++;
+        }
+
+    }
+
+    public void diminuirVolume() {
+        if (volume <= 0) {
+            return;
+        } else {
+            volume--;
+        }
+
+    }
+
+    public void ligar() {
+       ligado = true;
+    }
+
+    public void desligar() {
+
+        ligado = false;
+    }
+}
