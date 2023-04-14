@@ -8,13 +8,14 @@ class Petshop{
     private String raca;
     
     
-    public Petshop(){
-        System.out.println("iniciando objeto");
-        public String nome;
+    public Petshop(String nome, int idade){
+       this.nome = nome;
+       this.idade = idade;
     }
     
     public Petshop(){
         this.nome = "petshop victor";
+        this.idade = 2;
     }
    
     public String getRaca(){
@@ -70,6 +71,8 @@ class Petshop{
 class HelloWorld {
     public static void main(String[] args) {
         Petshop p= new Petshop();
+        System.out.println("O nome do pet shop:"+ p.getNome()+ "\n");
+         System.out.println("a idade do cliente  e:"+ p.getIdade()+ "\n");
         p.setNome("PetVictor"+ "\n");
         System.out.println("O nome do pet shop:"+ p.getNome()+ "\n");
         p.setLocalizacao("rua afonso arinos");
