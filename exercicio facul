@@ -1,5 +1,4 @@
 
-
 class Petshop{
     private String nome;
     private String localizacao;
@@ -9,6 +8,15 @@ class Petshop{
     private String raca;
     
     
+    public Petshop(){
+        System.out.println("iniciando objeto");
+        public String nome;
+    }
+    
+    public Petshop(){
+        this.nome = "petshop victor";
+    }
+   
     public String getRaca(){
         return this.raca;
     }
