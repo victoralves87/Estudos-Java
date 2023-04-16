@@ -1,0 +1,61 @@
+package POO;
+
+public class main3 {
+    public static void main(String[] args) {
+        teclado t1 = new teclado("inova", "preto");
+        t1.status();
+
+    }
+}
+
+
+
+
+
+
+package POO;
+
+public class teclado {
+    public String modelo;
+    private String cor;
+    private boolean lacrado;
+
+
+    public teclado(String m, String c) {  // aqui começa o construtor
+        this.modelo = m;
+        this.cor = c;
+        this.lacrado();
+
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void  setModelo(String m) {
+        this.modelo = m;
+    }
+
+
+    public String getCor() {
+        return cor;
+    }
+
+    public void setCor(String c) {
+        this.cor = c;
+    }
+
+    public void lacrado(){
+        this.lacrado = true;
+    }
+    public void aberto(){
+        this.lacrado = false;
+    }
+
+    public void status() {
+        System.out.println("sobre o teclado:");
+        System.out.println("modelo: " + this.modelo);
+        System.out.println("cor: " + this.cor);
+        System.out.println("esta lacrado? : " + this.lacrado);
+    }
+}
