@@ -1,0 +1,336 @@
+package projetoYoutube;
+
+public class mainYoutube {
+    public static void main(String[] args) {
+        video v[]=new video[3];
+        v[0]=new video("video01 de poo");
+        v[1]=new video("video02 de poo");
+        v[2]=new video("video03 de poo");
+
+
+        aluno a[]= new aluno[2];
+        a[0]= new aluno("luciano", 22,"m","juba");
+        a[1]=new aluno("pedro",20,"m","pedrinho");
+
+        vidualizacao vis[]=new vidualizacao[5];
+        vis[0] = new vidualizacao(a[0], v[1]);
+        vis[0].avaliar();
+        System.out.println(vis[0].toString());
+
+        vis[1]=new vidualizacao(a[0], v[2]);
+        vis[0].avaliar(87.0f);
+        System.out.println(vis[1].toString());
+
+        /*
+        System.out.println(v[0].toString());
+        System.out.println(a[0].toString());
+        */
+
+    }
+}
+
+
+
+
+
+
+package projetoYoutube;
+
+public interface acoesVideo {
+    public void play();
+    public void pause();
+    public void  like();
+
+
+}
+
+
+
+
+
+
+package projetoYoutube;
+
+public class video implements acoesVideo{
+    private String titulo;
+    private int avaliacao;
+    private int views;
+    private int curtidas;
+    private boolean reproduzir;
+
+
+    public video(String titulo) {
+        this.titulo = titulo;
+        this.avaliacao=1;
+        this.views=1;
+        this.curtidas=0;
+        this.reproduzir=false;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public video setTitulo(String titulo) {
+        this.titulo = titulo;
+        return this;
+    }
+
+    public int getAvaliacao() {
+        return avaliacao;
+    }
+
+    public video setAvaliacao(int avaliacao) {
+        int nova;
+        nova = (int)  ((this.avaliacao + avaliacao)/this.views);
+        this.avaliacao = nova;
+        return this;
+    }
+
+    public int getViews() {
+        return views;
+    }
+
+    public video setViews(int views) {
+        this.views = views;
+        return this;
+    }
+
+    public boolean getReproduzir() {
+        return reproduzir;
+    }
+
+    public video setReproduzir(boolean reproduzir) {
+        this.reproduzir = reproduzir;
+        return this;
+    }
+
+
+    public int getCurtidas() {
+        return curtidas;
+    }
+
+    public video setCurtidas(int curtidas) {
+        this.curtidas = curtidas;
+        return this;
+    }
+
+    @Override
+    public void play() {
+        this.reproduzir=true;
+
+    }
+
+    @Override
+    public void pause() {
+        this.reproduzir=false;
+
+    }
+
+    @Override
+    public void like() {
+        this.curtidas++;
+    }
+
+    @Override
+    public String toString() {
+        return "video{" +
+                "titulo='" + titulo + '\'' +
+                ", avaliacao='" + avaliacao + '\'' +
+                ", views=" + views +
+                ", curtidas=" + curtidas +
+                ", reproduzir=" + reproduzir +
+                '}';
+    }
+}
+
+
+
+
+
+
+package projetoYoutube;
+
+public abstract class pessoa {
+    protected  String nome;
+    protected int idade;
+    protected String sexo;
+    protected float experiencia;
+
+
+    public pessoa(String nome, int idade, String sexo) {
+        this.nome = nome;
+        this.idade = idade;
+        this.sexo = sexo;
+        this.experiencia=0;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public pessoa setNome(String nome) {
+        this.nome = nome;
+        return this;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public pessoa setIdade(int idade) {
+        this.idade = idade;
+        return this;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public pessoa setSexo(String sexo) {
+        this.sexo = sexo;
+        return this;
+    }
+
+    public float getExperiencia() {
+        return experiencia;
+    }
+
+    public pessoa setExperiencia(float experiencia) {
+        this.experiencia = experiencia;
+        return this;
+    }
+
+    protected void ganharxp(){
+
+    }
+
+    @Override
+    public String toString() {
+        return "pessoa{" +
+                "nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", sexo='" + sexo + '\'' +
+                ", experiencia=" + experiencia +
+                '}';
+    }
+}
+
+
+
+
+
+
+
+
+package projetoYoutube;
+
+public class aluno extends pessoa{
+    private String login;
+    private int totAssistido;
+
+    public aluno(String nome, int idade, String sexo, String login) {
+        super(nome, idade, sexo);
+        this.login=login;
+        this.totAssistido=0;
+    }
+
+
+    public String getLogin() {
+        return login;
+    }
+
+    public aluno setLogin(String login) {
+        this.login = login;
+        return this;
+    }
+
+    public int getTotAssistido() {
+        return totAssistido;
+    }
+
+    public aluno setTotAssistido(int totAssistido) {
+        this.totAssistido = totAssistido;
+        return this;
+    }
+
+    @Override
+    public String toString() {
+        return "aluno{" +
+                "login='" + login + '\'' +
+                ", totAssistido=" + totAssistido +
+                '}';
+    }
+}
+
+
+
+
+
+
+
+
+package projetoYoutube;
+
+public class vidualizacao {
+    private aluno espectador;
+    private video filme;
+
+    public vidualizacao(aluno espectador, video filme) {
+        this.espectador = espectador;
+        this.filme = filme;
+        this.espectador.setTotAssistido(this.espectador.getTotAssistido()+1);
+        this.filme.setViews(this.filme.getViews()+1);
+    }
+
+
+    public void avaliar(){
+        this.filme.setAvaliacao(5);
+
+    }
+    public void avaliar(int nota){
+        this.filme.setAvaliacao(nota);
+
+    }
+    public void avaliar(float porc){
+        int tot = 0;
+        if (porc <= 20){
+            tot=3;
+        } else if (porc <= 50) {
+            tot=5;
+        } else if (porc <= 90) {
+            tot=8;
+        }else {
+            tot=10;}
+
+        this.filme.setAvaliacao(tot);
+
+    }
+
+    public aluno getEspectador() {
+        return espectador;
+    }
+
+    public vidualizacao setEspectador(aluno espectador) {
+        this.espectador = espectador;
+        return this;
+    }
+
+    public video getFilme() {
+        return filme;
+    }
+
+    public vidualizacao setFilme(video filme) {
+        this.filme = filme;
+        return this;
+    }
+
+
+    @Override
+    public String toString() {
+        return "vidualizacao{" +
+                "espectador=" + espectador +
+                ", filme=" + filme +
+                '}';
+    }
+}
